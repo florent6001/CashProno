@@ -3,28 +3,33 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactMail;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Validation\ValidationException;
+use Illuminate\View\View;
 
 class ContactController extends Controller
 {
     /**
      * Affiche le formulaire de contact
      *
-     * @return void
+     * @return Application|Factory|View|void
      */
-    public function index() 
+    public function index()
     {
         return view('contact');
     }
 
     /**
-     * Traitement et envoie de l'email de contact
-     *
+     * Treat and send contact mail
      * @param Request $request
-     * @return void
+     * @return RedirectResponse
+     * @throws ValidationException
      */
-    public function send(Request $request) 
+    public function send(Request $request): RedirectResponse
     {
         $this->validate($request, [
             'email' => 'required|email',
@@ -38,7 +43,7 @@ class ContactController extends Controller
          } else {
              $request->session()->flash('success', 'Votre demande de contact a été envoyé avec succès !');
          }
-         
+
         return redirect()->route('homepage');
     }
 }

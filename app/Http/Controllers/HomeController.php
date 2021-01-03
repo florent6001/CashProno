@@ -2,23 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Contracts\Support\Renderable;
 use App\Pronostic;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return Renderable
      */
-    public function index()
+    public function index(): Renderable
     {
-        $daily_pronostic = Pronostic::take(5);
-        $winning_pronostic = Pronostic::take(5);
-        return view('home', [
-            'daily_pronostics' => $daily_pronostic,
-            'winning_pronostic' => $winning_pronostic
-        ]);
+        $pronostic = new Pronostic();
+        $data['daily_pronostics'] = $pronostic->daily_pronostics();
+        $data['winning_pronostics'] = $pronostic->winning_pronostics();
+
+        if (Auth::user() && Auth::user()->subscribed('football')) {
+            $data['subscription']['football'] = true;
+        } else {
+            $data['subscription']['football'] = false;
+        }
+
+        return view('home')->with($data);
     }
 }

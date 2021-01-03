@@ -47,6 +47,16 @@
                     <textarea type="short_description" name="short_description" id="short_description" class="form-control" required>{{ $pronostic->short_description }}</textarea>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="state">État du paris</label>
+                    <select name="state" id="state" class="form-control" required>
+                        <option value="En attente"  {{ $pronostic->state == 'En attente' ? 'selected' : '' }}>En attente</option>
+                        <option value="Gagnant" {{ $pronostic->state == 'Gagnant' ? 'selected' : '' }}>Gagnant</option>
+                        <option value="Perdant" {{ $pronostic->state == 'Perdant' ? 'selected' : '' }}>Perdant</option>
+                    </select>
+                </div>
+            </div>
             <div class="col-md-4 mt-3">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="1" id="free_access" name="free_access" {{ $pronostic->free_access ? 'checked' : '' }}>
@@ -56,6 +66,6 @@
                 </div>
             </div>
         </div>
-        <button class="mt-3 btn btn-primary">Créer le pronostic</button>
+        <button class="mt-3 btn btn-primary">Modifier le pronostic</button>
     </form>
 @endsection

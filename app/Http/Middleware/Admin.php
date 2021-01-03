@@ -16,20 +16,13 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check())
-        {
-            if(Auth::user()->admin == 1)
-            {            
-                return $next($request);
-            }
-            else 
-            {
-                $request->session()->flash('danger', 'Vous devez être administrateur afin d\'accéder à cette page.');
-            }
+        if(Auth::user()->admin == 1)
+        {            
+            return $next($request);
         }
         else 
         {
-            $request->session()->flash('danger', 'Vous devez être connecté afin d\'accéder à cette page.');
+            $request->session()->flash('danger', 'Vous devez être administrateur afin d\'accéder à cette page.');
         }
 
         return redirect()->route('homepage');

@@ -1,0 +1,6 @@
+- Regarder si moyen de payment déjà existant
+- Concours
+- RGOD google analytics
+- Cookie
+- Corriger les liens qui marche pas
+- Subscription & contact  env() outside

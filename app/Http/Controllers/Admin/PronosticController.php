@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PronosticRequest;
+use App\Notifications\PronosticCreated;
 use App\Pronostic;
 use Illuminate\Http\Request;
 
@@ -12,12 +13,12 @@ class PronosticController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
         $pronostics = Pronostic::all();
-        return view('admin.pronostic.index', 
+        return view('admin.pronostic.index',
             [
                 'pronostics' => $pronostics
             ]);
@@ -26,7 +27,7 @@ class PronosticController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function create()
     {
@@ -37,12 +38,18 @@ class PronosticController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(PronosticRequest $request)
     {
-        $validated = $request->validated();
-        
+            $request->validate([
+                'date' => 'required',
+                'sport' => 'required',
+                'description' => 'required',
+                'short_description' => 'required',
+                'logo_1' => 'required',
+            ]);
+
         $pronostic = Pronostic::create([
             'date' => $request->get('date'),
             'sport' => $request->get('sport'),
@@ -53,27 +60,17 @@ class PronosticController extends Controller
             'free_access' => (!empty($request->get('free_access')) ? 1 : 0 )
         ]);
 
+        $pronostic->notify(new PronosticCreated($pronostic));
         $request->session()->flash('success', 'Votre pronostic a été enregistré avec succès !');
 
         return redirect()->route('admin.pronostic.index');
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function edit(int $id)
     {
@@ -89,7 +86,7 @@ class PronosticController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $id)
     {
@@ -105,7 +102,7 @@ class PronosticController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(int $id, Request $request)
     {

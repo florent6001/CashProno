@@ -51,7 +51,6 @@
 								@auth
 									<div class="mb-3 d-md-flex d-block justify-content-md-end justify-content-center align-items-center">
 										<div class="text-white mx-2">Bonjour {{ Auth::user()->username }} </div>
-										<a href="{{ url('subscription_account') }}" class="btn btn-secondary mx-2">Mon compte</a>
 										<a href="{{ route('logout') }}"  onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="btn btn-secondary mx-2">Se déconnecter</a>
 										<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
 											@csrf
@@ -88,17 +87,17 @@
 									<i class="fa fa-home"></i> Accueil</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="{{ url('pronostic_index') }}">
+								<a class="nav-link" href="{{ route('pronostic_index') }}">
 									<i class="fas fa-futbol"></i>
 									Pronostics</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="{{ url('subscription_index') }}">
+								<a class="nav-link" href="{{ route('subscription_index') }}">
 									<i class="fas fa-star"></i>
 									Packs VIP</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">
+								<a class="nav-link" href="{{ url('concours') }}">
 									<i class="fas fa-gift"></i>
 									Concours</a>
 							</li>
@@ -108,9 +107,6 @@
 									Contact</a>
 							</li>
 							@auth
-								<li class="nav-item d-sm-block d-md-none">
-									<a class="nav-link" href="{{ url('subscription_account') }}">Mon compte</a>
-								</li>
 								<li class="nav-item d-sm-block d-md-none">
 									<a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Se déconnecter</a>
 								</li>
@@ -125,10 +121,10 @@
 								@endif
 							@else
 								<li class="nav-item d-sm-block d-md-none">
-									<a class="nav-link" href="{{ url('app_register') }}">S'inscrire</a>
+									<a class="nav-link" href="{{ route('register') }}">S'inscrire</a>
 								</li>
 								<li class="nav-item d-sm-block d-md-none">
-									<a class="nav-link" href="{{ url('app_login') }}">Se connecter</a>
+									<a class="nav-link" href="{{ route('login') }}">Se connecter</a>
 								</li>
 							@endif
 						</ul>
@@ -172,22 +168,22 @@
 					<div class="col-md-4">
 						<div class="text-uppercase font-weight-bold mb-4">LIENS RAPIDE</div>
 						<a href="{{ route('contact') }}">Nous contacter</a>
-						<a href="{{ url('subscription_index') }}">Boutique</a>
-						<a href="{{ url('pronostic_index') }}">Liste des pronostics</a>
+						<a href="{{ route('subscription_index') }}">Boutique</a>
+						<a href="{{ route('pronostic_index') }}">Liste des pronostics</a>
 					</div>
 					<div class="col-md-4">
 						<div class="text-uppercase font-weight-bold mb-4">INFORMATIONS LÉGALES</div>
-						<a href="#">Conditions générales de vente</a>
-						<a href="#">Mentions légales</a>
-						<a href="#">Politique de confidentialité des donnéees</a>
+						<a href="{{ url('lol') }}">Conditions générales de vente</a>
+						<a href="{{ url('lol') }}">Mentions légales</a>
+						<a href="{{ url('lol') }}">Politique de confidentialité des donnéees</a>
 					</div>
 					<div class="col-md-4">
-						<div class="text-uppercase font-weight-bold mb-4">NEWSLETTER</div>
+						{{-- <div class="text-uppercase font-weight-bold mb-4">NEWSLETTER</div>
 						<form action="#" class="form-inline">
 							<input class="form-control" type="email" name="email" id="email" placeholder="Votre adresse email">
 							<button class="btn btn-primary">M'inscrire</button>
-						</form>
-						<div class="text-uppercase font-weight-bold mb-4 mt-4">NOUS SUIVRE</div>
+						</form> --}}
+						<div class="text-uppercase font-weight-bold mb-4">NOUS SUIVRE</div>
 						<a href="http://instagram.com/cashpronofra" rel="noreferrer" target="_blank" class="d-inline-block px-1">
 							<i class="fab fa-instagram fa-2x"></i>
 						</a>
@@ -204,6 +200,7 @@
 	</div>
 	
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+	<script src="{{ asset('js/app.js') }}"></script>
+	@yield('javascript')
 </body>
 </html>

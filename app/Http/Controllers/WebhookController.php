@@ -29,7 +29,7 @@ class WebhookController extends CashierController
                 'name'          => 'default',
                 'stripe_id'     => $session['subscription'],
                 'stripe_status' => 'active',
-                'stripe_plan'   => 'price_1I5LRJDdfEiamf5bdNDkrgkg',
+                'stripe_plan'   => config('app.football_price_id'),
                 'quantity'      => 1,
                 'trial_ends_at' => null,
                 'ends_at'       => now()->addDays(30),

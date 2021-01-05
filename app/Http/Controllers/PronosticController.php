@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Pronostic;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class PronosticController extends Controller
 {
+    /**
+     * Display all pronostics
+     * @return Application|Factory|View
+     */
     public function index()
     {
         $pronostic = new Pronostic;
@@ -14,6 +22,11 @@ class PronosticController extends Controller
         return view('pronostic.index')->with($data);
     }
 
+    /**
+     * Display all pronostic where date = $date
+     * @param string $date
+     * @return Application|Factory|View
+     */
     public function find_by_date(string $date)
     {
         $pronostic = new Pronostic;
@@ -23,6 +36,11 @@ class PronosticController extends Controller
         return view('pronostic.date')->with($data);
     }
 
+    /**
+     * Show specific pronostic via $id
+     * @param Pronostic $id
+     * @return Application|Factory|RedirectResponse|View
+     */
     public function show(Pronostic $id)
     {
         if (!Auth::user()->subscribed('football')) {

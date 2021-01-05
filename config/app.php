@@ -229,4 +229,9 @@ return [
 
     ],
 
+    'telegram_football_group' => env('TELEGRAM_FOOTBALL_GROUP'),
+    'stripe_secret' => env('STRIPE_SECRET'),
+    'contact_mail' => env('CONTACT_MAIL'),
+    'telegram_group_url' => env('TELEGRAM_GROUP_URL'),
+    'football_price_id' => env('FOOTBALL_PRICE_ID'),
 ];

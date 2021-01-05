@@ -22,10 +22,11 @@ class SubscriptionController extends Controller
      */
     public function __construct()
     {
-        Stripe::setApiKey(env('STRIPE_SECRET'));
+        Stripe::setApiKey(config('app.stripe_secret'));
     }
 
     /**
+     * Show all plans with pricing
      * @return Application|Factory|View
      */
     public function index()
@@ -42,6 +43,7 @@ class SubscriptionController extends Controller
     }
 
     /**
+     * Create a checkout session and display payment form
      * @param Request $request
      * @return Application|Factory|RedirectResponse|View
      * @throws ValidationException
@@ -52,7 +54,7 @@ class SubscriptionController extends Controller
             'plan' => 'required'
         ]);
 
-        if($request->plan !== 'price_1I5LRJDdfEiamf5bdNDkrgkg') // Football
+        if($request->plan !== config('app.football_price_id')) // Football
         {
             return redirect()->route('homepage');
         }
@@ -65,6 +67,7 @@ class SubscriptionController extends Controller
     }
 
     /**
+     * Create the subscription when the checkout is successfully complete
      * @param Request $request
      * @return RedirectResponse
      * @throws ValidationException
@@ -80,14 +83,14 @@ class SubscriptionController extends Controller
 
         $user = Auth::user();
 
-        if($request->plan == 'price_1I5LRJDdfEiamf5bdNDkrgkg')
+        if($request->plan == config('app.football_price_id'))
         {
-            $nom_abonnement = 'football';
+            $plan_name = 'football';
         }
 
-        if(isset($nom_abonnement) && !empty($nom_abonnement))
+        if(isset($plan_name) && !empty($plan_name))
         {
-            if($user->newSubscription($nom_abonnement, $request->plan)->create($request->token))
+            if($user->newSubscription($plan_name, $request->plan)->create($request->token))
             {
                 $request->session()->flash('success', 'Votre abonnement a été ajouté avec succès !');
             }
@@ -101,6 +104,7 @@ class SubscriptionController extends Controller
     }
 
     /**
+     * Portal for manage user's billing and subscription powered by stripe
      * @param Request $request
      * @return Application|RedirectResponse|Redirector
      */

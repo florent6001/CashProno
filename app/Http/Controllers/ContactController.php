@@ -14,7 +14,7 @@ use Illuminate\View\View;
 class ContactController extends Controller
 {
     /**
-     * Affiche le formulaire de contact
+     * Show the contact form
      *
      * @return Application|Factory|View|void
      */
@@ -36,7 +36,7 @@ class ContactController extends Controller
             'content' => 'required'
         ]);
 
-        Mail::to(env('CONTACT_MAIL'))->send(new ContactMail($request->get('email'), $request->get('content')));
+        Mail::to(config('app.contact_mail'))->send(new ContactMail($request->get('email'), $request->get('content')));
 
         if( count(Mail::failures()) > 0 ) {
             $request->session()->flash('danger', 'Une erreur s\'est produite lors de l\'envoi de l\'email.');

@@ -11,7 +11,7 @@ class ContactMail extends Mailable
     use Queueable, SerializesModels;
 
     /**
-     * Prend les variables de l'email
+     * Retrieve email variables
      *
      * @param string $email
      * @param string $message
@@ -23,7 +23,7 @@ class ContactMail extends Mailable
     }
 
     /**
-     * Construit et envoie l'email.
+     * Build and send the contact mail
      *
      * @return $this
      */

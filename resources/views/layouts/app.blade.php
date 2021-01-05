@@ -15,7 +15,7 @@
 
     <!-- Styles -->
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-	
+
 	<!-- Favicon -->
 	<link rel="apple-touch-icon" sizes="57x57" href="{{ asset('/favicon/apple-icon-57x57.png') }}">
 	<link rel="apple-touch-icon" sizes="60x60" href="{{ asset('/favicon/apple-icon-60x60.png') }}">
@@ -149,7 +149,7 @@
 			</div>
 		@enderror
 
-		
+
 		@error('password')
 			<div class="container mt-5 w-100">
 				<p class="alert alert-danger w-100" role="alert">
@@ -190,6 +190,9 @@
 						<a href="https://www.snapchat.com/add/cashpronofra" rel="noreferrer" target="_blank" class="d-inline-block px-1">
 							<i class="fab fa-snapchat fa-2x"></i>
 						</a>
+                        <a href="{{ config('app.telegram_group_url') }}" rel="noreferrer" target="_blank" class="d-inline-block px-1">
+							<i class="fab fa-telegram fa-2x"></i>
+						</a>
 					</div>
 					<div class="col-md-12 mt-5">
 						<span class="text-center d-block">Jouer comporte des risques : endettement, isolement, dépendance. Pour être aidé, appelez le 09-74-75-13-13 (appel non surtaxé)</span>
@@ -198,7 +201,7 @@
 			</div>
 		</footer>
 	</div>
-	
+
     <!-- Scripts -->
 	<script src="{{ asset('js/app.js') }}"></script>
 	@yield('javascript')

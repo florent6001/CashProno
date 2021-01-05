@@ -21,8 +21,7 @@ class PronosticCreated extends Notification
         $url = url('/pronostic/' . $notifiable->id);
 
         return TelegramMessage::create()
-            // Optional recipient user id.
-            ->to('-1001476149651')
+            ->to(config('app.telegram_football_group'))
             ->content("Salut tout le monde!\nUn nouveau pronostic vient d'être *publié* sur CashProno !")
             ->button('Voir le pronostic', $url);
     }

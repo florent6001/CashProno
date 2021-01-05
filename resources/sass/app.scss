@@ -1,5 +1,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 // Variables
 @import 'variables';
@@ -140,4 +141,8 @@ footer a:hover {
     .pricing .card:hover .btn {
         opacity: 1;
     }
+}
+
+.join-telegram {
+    font-family: "Open Sans", sans-serif;
 }

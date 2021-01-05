@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         @isset ($daily_pronostics)
-            <div class="row">
+            <div class="row mt-4">
                 <div class="col-md-12 d-md-flex justify-content-between">
                     <h1 class="font-italic font-weight-bold h2">Pronostics du jour</h1>
                     <h2 class="font-italic text-primary font-weight-bold">{{ Carbon\Carbon::parse($daily_pronostics->first()->date)->format('d/m/Y') }}</h2>
@@ -88,7 +88,7 @@
                         <p class="text-center">Aucun pronostic n'a été validé pour le moment.</p>
                     @endforelse
                 </div>
-                
+
                 <div class="text-center">
                     <a href="{{ route('pronostic_index') }}" class="btn btn-block btn-primary text-white text-uppercase py-2">Voir l'historique des pronostics</a>
                 </div>
@@ -117,6 +117,9 @@
                             <a href="https://www.snapchat.com/add/cashpronofra" rel="noreferrer" target="_blank" class="d-block px-1">
                                 <img src="{{ asset('/img/snapchat_cashprono.png') }}" alt="Lien vers le snapchat de CashProno" class="img-fluid" style="max-height: 50px;">
                             </a>
+                            <a href="{{ config('app.telegram_group_url') }}" rel="noreferrer" target="_blank" class="d-block px-1">
+                                <img src="{{ asset('/img/logo_telegram.png') }}" alt="Lien vers le telegram de CashProno" class="img-fluid" style="max-height: 50px;">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -124,6 +127,16 @@
             <div class="col-md-6 mt-5 bg-concours text-center py-5 text-white font-weight-bold rounded h-100">
                 <h3 class="text-uppercase">Concours</h3>
                 <p>Enovoie-nous ton pronostic et tente de gagner des cadeaux !</p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="border px-5 py-3 text-center h5 join-telegram">
+                    <a href="{{ config('app.telegram_group_url') }}">
+                        <i class="fab fa-telegram"></i>
+                        Rejoignez nous sur Telegram et reçevez automatiquement une notification lorsqu'un pronostic est posté.
+                    </a>
+                </div>
             </div>
         </div>
     </div>

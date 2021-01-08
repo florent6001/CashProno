@@ -36,10 +36,16 @@ class Pronostic extends Model
                         ->limit('1')
                         ->get();
 
-        return DB::table('pronostics')
+        if(empty($last_day[0]))
+        {
+            return null;
+        } else
+        {
+            return DB::table('pronostics')
                     ->select('*')
                     ->where('date', '=', $last_day[0]->date)
                     ->get();
+        }
     }
 
     public function winning_pronostics()

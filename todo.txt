@@ -1,5 +1,4 @@
 - Repair password reset in production
-- Modifier image concours
 
 - User in administration
 - Plan in database

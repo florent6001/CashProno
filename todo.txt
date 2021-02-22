@@ -1,4 +1,5 @@
-- Check if payment method already exist
-- Work on Giveaways
-- Change {{ url('') }} links to {{ route('') }}
+- Repair password reset in production
+- Modifier image concours
+
+- User in administration
 - Plan in database

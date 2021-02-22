@@ -93,19 +93,16 @@
                     <a href="{{ route('pronostic_index') }}" class="btn btn-block btn-primary text-white text-uppercase py-2">Voir l'historique des pronostics</a>
                 </div>
             </div>
-            <div class="col-md-6 mt-5">
+            <div class="col-md-6 mt-5 p-0">
                 <a href="{{ route('subscription_index') }}">
-                    <img src="{{ asset('/img/pack_vip.png') }}" alt="Image pack vip" class="img-fluid d-none d-md-block w-100">
-                </a>
-                <a href="{{ route('subscription_index') }}">
-                    <img src="{{ asset('/img/pack_vip_mobile.png') }}" alt="Image pack vip mobile" class="img-fluid d-block d-md-none w-100">
+                    <img src="{{ asset('/img/pack_vip_mobile.png') }}" alt="Image pack vip" class="img-fluid d-block w-100">
                 </a>
             </div>
         </div>
 
         {{-- Concours & réseaux --}}
         <div class="row">
-            <div class="col-md-6 mt-5">
+            <div class="col-md-6 mt-5 pl-0">
                 <div class="d-flex align-items-center justify-content-center border border-gray rounded text-center py-3 h-100">
                     <div>
                         <p class="h4 font-weight-bold">Rejoignez-nous sur les réseaux !</p>
@@ -124,13 +121,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 mt-5 bg-concours text-center py-5 text-white font-weight-bold rounded h-100">
+            <div class="col-md-6 mt-5 bg-concours text-center py-5 text-white font-weight-bold rounded h-100 p-0">
                 <h3 class="text-uppercase">Concours</h3>
                 <p>Enovoie-nous ton pronostic et tente de gagner des cadeaux !</p>
             </div>
         </div>
         <div class="row mt-4">
-            <div class="col-md-12">
+            <div class="col-md-12 p-0">
                 <div class="border px-5 py-3 text-center h5 join-telegram">
                     <a href="{{ config('app.telegram_group_url') }}">
                         <i class="fab fa-telegram"></i>

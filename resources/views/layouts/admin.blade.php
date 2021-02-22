@@ -56,6 +56,13 @@
         </a>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.giveaway.index') }}">
+          <i class="fas fa-star"></i>
+          <span>Concours</span>
+        </a>
+      </li>
+
       
     </ul>
     <!-- End of Sidebar -->
@@ -195,7 +202,7 @@
 
   <!-- Custom scripts for all pages-->
   <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
-
+  @yield('javascript')
 </body>
 
 </html>

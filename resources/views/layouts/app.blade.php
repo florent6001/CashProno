@@ -68,6 +68,7 @@
 										<button type="submit" class="btn btn-secondary mb-2">Se connecter</button>
 										&nbsp;
 										<a href="{{ route('register') }}" class="btn btn-secondary mb-2">S'inscrire</a>
+										<a href="{{ route('password.request') }}" class="text-white pl-3">Mot de passe oublié</a>
 									</form>
 								@endif
 						</div>
@@ -97,7 +98,7 @@
 									Packs VIP</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="{{ url('concours') }}">
+								<a class="nav-link" href="{{ route('giveaway_index') }}">
 									<i class="fas fa-gift"></i>
 									Concours</a>
 							</li>
@@ -173,9 +174,10 @@
 					</div>
 					<div class="col-md-4">
 						<div class="text-uppercase font-weight-bold mb-4">INFORMATIONS LÉGALES</div>
-						<a href="{{ url('lol') }}">Conditions générales de vente</a>
-						<a href="{{ url('lol') }}">Mentions légales</a>
-						<a href="{{ url('lol') }}">Politique de confidentialité des donnéees</a>
+						<a href="{{ route('cgu') }}">Conditions générales d'utilisation</a>
+						<a href="{{ route('cgv') }}">Conditions générales de vente</a>
+						<a href="{{ route('mentions_legales') }}">Mentions légales</a>
+						<a href="{{ route('politique_confidentialite_donnees') }}">Politique de confidentialité des donnéees</a>
 					</div>
 					<div class="col-md-4">
 						{{-- <div class="text-uppercase font-weight-bold mb-4">NEWSLETTER</div>

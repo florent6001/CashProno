@@ -25,6 +25,6 @@ class HomeController extends Controller
             $data['subscription']['football'] = false;
         }
 
-        return view('home')->with($data);
+        return view('pages.home')->with($data);
     }
 }

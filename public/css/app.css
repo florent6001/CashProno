@@ -11040,3 +11040,7 @@ footer a:hover {
   font-family: "Open Sans", sans-serif;
 }
 
+.btn-primary:not(:disabled):not(.disabled).active {
+  background-color: #000;
+}
+

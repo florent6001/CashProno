@@ -48,6 +48,12 @@ class PronosticController extends Controller
             {
                 return redirect()->route('subscription_index');
             }
+            else
+            {
+                return view('pronostic.show', [
+                    'pronostic' => $id
+                ]);
+            }
         }
 
         return view('pronostic.show', [

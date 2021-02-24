@@ -1,4 +1,5 @@
 - Repair password reset in production
+- Changer la page error 404
 
 - User in administration
 - Plan in database

@@ -43,16 +43,14 @@ class PronosticController extends Controller
      */
     public function show(Pronostic $id)
     {
-        if (!Auth::user()->subscribed('football')) {
-            if (substr($id, -1) !== 0 || substr($id, -1) !== 5)
+        if($id->free_access !== 1)
+        {
+            if (!Auth::user()->subscribed('football')) 
             {
-                return redirect()->route('subscription_index');
-            }
-            else
-            {
-                return view('pronostic.show', [
-                    'pronostic' => $id
-                ]);
+                if (substr($id, -1) !== 0 || substr($id, -1) !== 5)
+                {
+                    return redirect()->route('subscription_index');
+                }
             }
         }
 

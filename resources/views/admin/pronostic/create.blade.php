@@ -28,9 +28,9 @@
                 <div class="form-group">
                     <label for="sport">Sport concerné</label>
                     <select name="sport" id="sport" class="form-control" required>
-                        <option value="football"  {{ old('sport') == 'football' ? 'selected' : '' }}>Football</option>
-                        <option value="tennis" {{ old('sport') == 'tennis' ? 'selected' : '' }}>Tennis</option>
-                        <option value="basket" {{ old('sport') == 'basket' ? 'selected' : '' }}>Basket-ball</option>
+                        <option value="Football"  {{ old('sport') == 'Football' ? 'selected' : '' }}>Football</option>
+                        <option value="Tennis" {{ old('sport') == 'Tennis' ? 'selected' : '' }}>Tennis</option>
+                        <option value="Basket" {{ old('sport') == 'Basket' ? 'selected' : '' }}>Basket-ball</option>
                     </select>
                 </div>
             </div>

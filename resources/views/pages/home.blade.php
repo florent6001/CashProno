@@ -36,7 +36,7 @@
                                     @endisset
                                 </div>
                             </div>
-                            {{ $daily_pronostic->short_description }}
+                            <p class="montserrat">{{ $daily_pronostic->short_description }}</p>
                         </div>
                     </div>
                 </div>
@@ -54,8 +54,8 @@
         @endisset
 
         {{-- Derniers pronos validé --}}
-        <div class="row">
-            <div class="col-md-6 mt-5">
+        <div class="row mt-3">
+            <div class="col-md-6">
                 <div class="border border-gray rounded-top px-3 py-4">
                     <h2 class="text-uppercase text-center h4 font-weight-bold font-italic mb-4">Derniers pronostics validé
                         <i class="fa fa-check vert-valide"></i>
@@ -76,7 +76,7 @@
                                     {{ $winning_pronostic->sport }}
                                 </a>
                                 <br>
-                                {{ $winning_pronostic->short_description }}
+                                <p class="montserrat">{{ $winning_pronostic->short_description }}</p>
                             </div>
                             <div class="d-flex">
                                 <img src="/upload/{{ $winning_pronostic->logo_1 }}" style="height: 50px;">
@@ -95,7 +95,7 @@
                     <a href="{{ route('pronostic_index') }}" class="btn btn-block btn-primary text-white text-uppercase py-2">Voir l'historique des pronostics</a>
                 </div>
             </div>
-            <div class="col-md-6 mt-5 p-0">
+            <div class="col-md-6">
                 <a href="{{ route('subscription_index') }}">
                     <img src="{{ asset('/img/pack_vip_mobile.png') }}" alt="Image pack vip" class="img-fluid d-block w-100">
                 </a>
@@ -103,9 +103,9 @@
         </div>
 
         {{-- Concours & réseaux --}}
-        <div class="row">
-            <div class="col-md-6 mt-5 p-0">
-                <div class="d-flex align-items-center justify-content-center border border-gray rounded text-center py-3 h-100 p-0">
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <div class="d-flex align-items-center justify-content-center border border-gray rounded text-center py-3 h-100">
                     <div>
                         <p class="h4 font-weight-bold">Rejoignez-nous sur les réseaux !</p>
                         <br>
@@ -123,13 +123,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 mt-5 bg-concours text-center py-5 text-white font-weight-bold rounded h-100 p-0">
-                <h3 class="text-uppercase">Concours</h3>
-                <p>Enovoie-nous ton pronostic et tente de gagner des cadeaux !</p>
+            <div class="col-md-6">
+                <div class="bg-concours text-center py-5 font-weight-bold rounded p-0">
+                    <a href="{{ route('giveaway_index') }}" class="text-white">
+                        <h3 class="text-uppercase">Concours</h3>
+                        <p>Enovoie-nous ton pronostic et tente de gagner des cadeaux !</p>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="row mt-4">
-            <div class="col-md-12 p-0">
+            <div class="col-md-12">
                 <div class="border px-5 py-3 text-center h5 join-telegram">
                     <a href="{{ config('app.telegram_group_url') }}">
                         <i class="fab fa-telegram"></i>

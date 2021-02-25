@@ -53,6 +53,7 @@ class Pronostic extends Model
         return DB::table('pronostics')
                 ->select('*')
                 ->where('state', '=', 'Gagnant')
+                ->limit('3')
                 ->get();
     }
 

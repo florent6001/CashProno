@@ -5,7 +5,7 @@
     <h1 class="mt-5">Liste des pronostics</h1>
     <a href ="{{ route('admin.pronostic.create') }}" class="btn btn-primary mt-3">Créer un nouveau pronostic</a>
 
-	<table class="table mt-5">
+	<table class="table table-responsive mt-5">
 		<thead>
 			<tr>
 				<th>Id</th>

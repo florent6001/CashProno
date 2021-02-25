@@ -83,6 +83,11 @@
 
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav mt-2 mb-2 ml-auto mr-auto">
+							<li class="nav-item d-block d-md-none">
+								<a class="nav-link" href="{{ route('homepage') }}">
+									<img src="{{ asset('/img/LogoCashPronoBleu.png') }}" alt="Logo de cashprono" style="max-width: 100px;">
+								</a>
+							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="{{ route('homepage') }}">
 									<i class="fa fa-home"></i> Accueil</a>

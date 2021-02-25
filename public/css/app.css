@@ -10907,6 +10907,10 @@ a {
   cursor: pointer;
 }
 
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
 .btn {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
@@ -11037,7 +11041,7 @@ footer a:hover {
 }
 
 .join-telegram {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active {

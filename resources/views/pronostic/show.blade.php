@@ -14,7 +14,7 @@
                         @else
                             <i class="fas fa-futbol"></i>
                         @endif
-                        {{ $pronostic->sport }} - {{ $pronostic->state }}
+                        {{ $pronostic->sport }}
                     </a>
                 </div>
                 <div class="d-flex">
@@ -24,7 +24,12 @@
                     @endisset
                 </div>
             </div>
-            {{ $pronostic->description }}
+            {{ $pronostic->description }} 
+            @if($pronostic->state == 'Gagnant')
+                <i class="fa fa-2x fa-check vert-valide"></i>
+            @elseif($pronostic->state == 'Perdant')
+                <i class="fa fa-2x fa-times text-muted"></i>
+            @endif
         </div>
     </div>
 @endsection

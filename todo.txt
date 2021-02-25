@@ -1,8 +1,6 @@
 - Repair password reset in production
 - Changer la page error 404
-- Logo menu mobile
-- Il faudrait que tu mette la ou on poste un prono la possibilité de mettre qu'il n'y a pas de pronos aujourd'hui genre dans poster un prono la ou y'a Fiootball Basket tout ça genre mettre "Aucun pronostics disponible" un truc du genre et on rajoutera une description pour dire la date du prochain prono ou dire qu'il n'y a pas de prono car la c'est affiché le prono d'hier 
-- Table mobile admin
 
+- Il faudrait que tu mette la ou on poste un prono la possibilité de mettre qu'il n'y a pas de pronos aujourd'hui genre dans poster un prono la ou y'a Fiootball Basket tout ça genre mettre "Aucun pronostics disponible" un truc du genre et on rajoutera une description pour dire la date du prochain prono ou dire qu'il n'y a pas de prono car la c'est affiché le prono d'hier 
 - User in administration
 - Plan in database

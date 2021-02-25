@@ -19,7 +19,7 @@
                                                 <i class="fas fa-futbol"></i>
                                             @endif
                                             {{ $pronostic->sport }}
-                                            ({{ Carbon\Carbon::parse($pronostic->date)->format('d-m-Y') }}) - {{ $pronostic->state }}
+                                            ({{ Carbon\Carbon::parse($pronostic->date)->format('d-m-Y') }})
                                         </a>
                                     </div>
                                     <div class="d-flex">
@@ -29,7 +29,12 @@
                                         @endisset
                                     </div>
                                 </div>
-                                {{ $pronostic->short_description }}
+                                {{ $pronostic->short_description }} 
+                                @if($pronostic->state == 'Gagnant')
+                                    <i class="fa fa-2x fa-check vert-valide"></i>
+                                @elseif($pronostic->state == 'Perdant')
+                                    <i class="fa fa-2x fa-times text-muted"></i>
+                                @endif
                             </div>
                         </div>
                     </div>

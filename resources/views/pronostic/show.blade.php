@@ -14,7 +14,7 @@
                         @else
                             <i class="fas fa-futbol"></i>
                         @endif
-                        {{ $pronostic->sport }}
+                        {{ $pronostic->sport }} - {{ $pronostic->state }}
                     </a>
                 </div>
                 <div class="d-flex">

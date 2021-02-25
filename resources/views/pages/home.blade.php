@@ -45,6 +45,8 @@
             <div class="text-center">
                 @if($subscription['football'] == true)
                     <a href="{{ route('pronostic_find_by_date', Carbon\Carbon::parse($daily_pronostics->first()->date)->format('Y-m-d') )}}" class="btn btn-primary btn-block text-white text-uppercase py-2">Accéder a tous les pronostics du jour</a>
+                @elseif($daily_pronostic->free_access == 1)
+                    <a href="{{ route('pronostic_find_by_date', Carbon\Carbon::parse($daily_pronostics->first()->date)->format('Y-m-d') )}}" class="btn btn-primary btn-block text-white text-uppercase py-2">Accéder a tous les pronostics du jour</a>
                 @else
                     <a href="{{ route('subscription_index') }}" class="btn btn-primary btn-block text-white text-uppercase py-2">Disponible dans le Pack VIP</a>
                 @endif
@@ -63,23 +65,23 @@
                     @forelse($winning_pronostics as $winning_pronostic)
                         <div class="d-flex justify-content-between p-3">
                             <div>
-                                <a href="{{ route('pronostic_show', $daily_pronostic->id) }}">
-                                    @if ($daily_pronostic->sport == 'basket')
+                                <a href="{{ route('pronostic_show', $winning_pronostic->id) }}">
+                                    @if ($winning_pronostic->sport == 'basket')
                                         <i class="fas fa-basketball-ball"></i>
-                                    @elseif($daily_pronostic->sport == 'tennis')
+                                    @elseif($winning_pronostic->sport == 'tennis')
                                         <i class="fas fa-table-tennis"></i>
                                     @else
                                         <i class="fas fa-futbol"></i>
                                     @endif
-                                    {{ $daily_pronostic->sport }}
+                                    {{ $winning_pronostic->sport }}
                                 </a>
                                 <br>
-                                {{ $daily_pronostic->short_description }}
+                                {{ $winning_pronostic->short_description }}
                             </div>
                             <div class="d-flex">
-                                <img src="/upload/{{ $daily_pronostic->logo_1 }}" style="height: 50px;">
-                                @if (!empty($daily_pronostic->logo_2))
-                                    <img src="/upload/{{ $daily_pronostic->logo_2 }}" style="height: 50px;">
+                                <img src="/upload/{{ $winning_pronostic->logo_1 }}" style="height: 50px;">
+                                @if (!empty($winning_pronostic->logo_2))
+                                    <img src="/upload/{{ $winning_pronostic->logo_2 }}" style="height: 50px;">
                                 @endisset
                             </div>
                         </div>
@@ -102,8 +104,8 @@
 
         {{-- Concours & réseaux --}}
         <div class="row">
-            <div class="col-md-6 mt-5 pl-0">
-                <div class="d-flex align-items-center justify-content-center border border-gray rounded text-center py-3 h-100">
+            <div class="col-md-6 mt-5 p-0">
+                <div class="d-flex align-items-center justify-content-center border border-gray rounded text-center py-3 h-100 p-0">
                     <div>
                         <p class="h4 font-weight-bold">Rejoignez-nous sur les réseaux !</p>
                         <br>

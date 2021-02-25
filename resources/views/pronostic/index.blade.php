@@ -19,7 +19,7 @@
                                                 <i class="fas fa-futbol"></i>
                                             @endif
                                             {{ $pronostic->sport }}
-                                            ({{ Carbon\Carbon::parse($pronostic->date)->format('d-m-Y') }})
+                                            ({{ Carbon\Carbon::parse($pronostic->date)->format('d-m-Y') }}) - {{ $pronostic->state }}
                                         </a>
                                     </div>
                                     <div class="d-flex">

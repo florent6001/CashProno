@@ -29,9 +29,9 @@
                 <div class="form-group">
                     <label for="sport">Sport concerné</label>
                     <select name="sport" id="sport" class="form-control" required>
-                        <option value="football"  {{ $pronostic->sport == 'football' ? 'selected' : '' }}>Football</option>
-                        <option value="tennis" {{ $pronostic->sport == 'tennis' ? 'selected' : '' }}>Tennis</option>
-                        <option value="basket" {{ $pronostic->sport == 'basket' ? 'selected' : '' }}>Basket-ball</option>
+                        <option value="Football"  {{ $pronostic->sport == 'Football' ? 'selected' : '' }}>Football</option>
+                        <option value="Tennis" {{ $pronostic->sport == 'Tennis' ? 'selected' : '' }}>Tennis</option>
+                        <option value="basket" {{ $pronostic->sport == 'Basket' ? 'selected' : '' }}>Basket-ball</option>
                     </select>
                 </div>
             </div>

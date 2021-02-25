@@ -54,6 +54,7 @@ class Pronostic extends Model
                 ->select('*')
                 ->where('state', '=', 'Gagnant')
                 ->limit('3')
+                ->orderBy('date', 'DESC')
                 ->get();
     }
 

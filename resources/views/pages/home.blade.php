@@ -5,7 +5,7 @@
         @isset ($daily_pronostics)
             <div class="row mt-4">
                 <div class="col-md-12 d-md-flex justify-content-between">
-                    <h1 class="font-italic font-weight-bold h2">Pronostics du jour</h1>
+                    <h1 class="font-italic font-weight-bold h2">PRONOSTICS DU JOUR</h1>
                     <h2 class="font-italic text-primary font-weight-bold">{{ Carbon\Carbon::parse($daily_pronostics->first()->date)->format('d/m/Y') }}</h2>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                     <hr>
 
                     @forelse($winning_pronostics as $winning_pronostic)
-                        <div class="d-flex justify-content-between p-3">
+                        <div class="d-flex justify-content-between p-3 font-weight-bold">
                             <div>
                                 <a href="{{ route('pronostic_show', $winning_pronostic->id) }}">
                                     @if ($winning_pronostic->sport == 'basket')

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="col-12">
-            <h1>Liste des pronostics</h1>
+            <h1 class="font-weight-bold">Liste des pronostics</h1>
                 @foreach ($pronostics as $pronostic)
                     <div class="row pt-3">
                         <div class="col-md-12">
@@ -29,7 +29,7 @@
                                         @endisset
                                     </div>
                                 </div>
-                                {{ $pronostic->short_description }} 
+                                <span class="font-weight-bold">{{ $pronostic->short_description }} </span>
                                 @if($pronostic->state == 'Gagnant')
                                     <i class="fa fa-2x fa-check vert-valide"></i>
                                 @elseif($pronostic->state == 'Perdant')

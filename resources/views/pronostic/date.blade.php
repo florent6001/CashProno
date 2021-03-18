@@ -28,7 +28,9 @@
                                     @endisset
                                 </div>
                             </div>
-                            {{ $pronostic->short_description }} 
+                            <div class="font-weight-bold">
+                                {{ $pronostic->short_description }}
+                            </div> 
                             @if($pronostic->state == 'Gagnant')
                                 <i class="fa fa-2x fa-check vert-valide"></i>
                             @elseif($pronostic->state == 'Perdant')

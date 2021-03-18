@@ -4,7 +4,7 @@
     <div class="container">
         <div class="col-12">
             <h1>Pronostic #{{ $pronostic->id }}</h1>
-            <div class="d-md-flex justify-content-between mt-4">
+            <div class="d-flex justify-content-between mt-4">
                 <div>
                     <a class="font-weight-bold h3" href="{{ route('pronostic_show', $pronostic->id) }}">
                         @if ($pronostic->sport == 'basket')
@@ -24,7 +24,9 @@
                     @endisset
                 </div>
             </div>
-            {{ $pronostic->description }} 
+            <div class="font-weight-bold">
+                {{ $pronostic->description }} 
+            </div>
             @if($pronostic->state == 'Gagnant')
                 <i class="fa fa-2x fa-check vert-valide"></i>
             @elseif($pronostic->state == 'Perdant')

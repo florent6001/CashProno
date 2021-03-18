@@ -38,7 +38,7 @@
 <body>
     <div id="app">
 		<header>
-			<div class="bg-primary d-none d-md-block">
+			<div class="bg-primary d-md-block">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-3 d-md-flex justify-content-center align-items-center center align-self-center">
@@ -47,7 +47,7 @@
 								<br>depuis
 								<br>2017</h2>
 						</div>
-						<div class="col-md-9 py-5">
+						<div class="col-md-9 py-5 d-none d-md-block">
 								@auth
 									<div class="mb-3 d-md-flex d-block justify-content-md-end justify-content-center align-items-center">
 										<div class="text-white mx-2">Bonjour {{ Auth::user()->username }} </div>
@@ -83,11 +83,6 @@
 
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav mt-2 mb-2 ml-auto mr-auto">
-							<li class="nav-item d-block d-md-none">
-								<a class="nav-link" href="{{ route('homepage') }}">
-									<img src="{{ asset('/img/LogoCashPronoBleu.png') }}" alt="Logo de cashprono" style="max-width: 100px;">
-								</a>
-							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="{{ route('homepage') }}">
 									<i class="fa fa-home"></i> Accueil</a>

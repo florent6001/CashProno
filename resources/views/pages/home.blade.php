@@ -14,7 +14,7 @@
                 <div class="row pt-3">
                     <div class="col-md-12">
                         <div class="border border-gray rounded-top px-3 py-4">
-                            <div class="d-md-flex justify-content-between">
+                            <div class="d-flex justify-content-between">
                                 <div>
                                     <h3 class="font-weight-bold">
                                         <a href="{{ route('pronostic_show', $daily_pronostic->id) }}">
@@ -54,8 +54,8 @@
         @endisset
 
         {{-- Derniers pronos validé --}}
-        <div class="row mt-3">
-            <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6 mt-3">
                 <div class="border border-gray rounded-top px-3 py-4">
                     <h2 class="text-uppercase text-center h4 font-weight-bold font-italic mb-4">Derniers pronostics validé
                         <i class="fa fa-check vert-valide"></i>
@@ -95,7 +95,7 @@
                     <a href="{{ route('pronostic_index') }}" class="btn btn-block btn-primary text-white text-uppercase py-2">Voir l'historique des pronostics</a>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mt-3">
                 <a href="{{ route('subscription_index') }}">
                     <img src="{{ asset('/img/pack_vip_mobile.png') }}" alt="Image pack vip" class="img-fluid d-block w-100">
                 </a>
@@ -103,8 +103,8 @@
         </div>
 
         {{-- Concours & réseaux --}}
-        <div class="row mt-3">
-            <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6 mt-3">
                 <div class="d-flex align-items-center justify-content-center border border-gray rounded text-center py-3 h-100">
                     <div>
                         <p class="h4 font-weight-bold">Rejoignez-nous sur les réseaux !</p>
@@ -123,7 +123,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mt-3">
                 <div class="bg-concours text-center py-5 font-weight-bold rounded p-0">
                     <a href="{{ route('giveaway_index') }}" class="text-white">
                         <h3 class="text-uppercase">Concours</h3>

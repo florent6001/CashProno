@@ -8,7 +8,7 @@
                     <div class="row pt-3">
                         <div class="col-md-12">
                             <div class="border border-gray rounded-top px-3 py-4">
-                                <div class="d-md-flex justify-content-between">
+                                <div class="d-flex justify-content-between">
                                     <div>
                                         <a class="font-weight-bold h3" href="{{ route('pronostic_show', $pronostic->id) }}">
                                             @if ($pronostic->sport == 'basket')

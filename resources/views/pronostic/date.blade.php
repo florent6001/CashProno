@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="col-12">
-            <h1>Pronostic du {{ Carbon\Carbon::parse($date)->format('d/m/Y') }} </h1>
+            <h1 class="font-weight-bold">Pronostic du {{ Carbon\Carbon::parse($date)->format('d/m/Y') }} </h1>
             @foreach ($pronostics as $pronostic)
                 <div class="row pt-3">
                     <div class="col-md-12">

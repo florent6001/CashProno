@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="col-12">
-            <h1>Pronostic #{{ $pronostic->id }}</h1>
+            <h1 class="font-weight-bold">Pronostic #{{ $pronostic->id }}</h1>
             <div class="d-flex justify-content-between mt-4">
                 <div>
                     <a class="font-weight-bold h3" href="{{ route('pronostic_show', $pronostic->id) }}">

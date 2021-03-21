@@ -22,6 +22,10 @@
                             <div id="card-element"></div>
                         </div>
 
+                        <div class="alert alert-warning mt-4">
+                            Il se peut que vous voyez affiché le montant de 0€ lors de votre paiement en utilisant 3D Secure. Ce montant est faux, vous serez bien facturé le prix de l'abonnement. Il sagit d'un problème venant de notre fournisseur. Veuillez-nous excusez pour la gène occasionnée.
+                        </div>
+
                         <button type="submit" class="btn btn-primary w-100" id="card-button" data-secret="{{ $intent->client_secret }}">Payer</button>
                     </form>
                 </div>

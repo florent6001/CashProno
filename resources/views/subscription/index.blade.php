@@ -22,7 +22,7 @@
                             <i class="fa fa-check mr-2 text-primary"></i> Remboursé sous 55% de réussite sur le mois<sup>(1)</sup></li>
                 </ul>
 
-                @if($subscription['football'] == false)
+                @if($subscription['football'] == true)
                     <form method="POST" action="{{ route('subscription_create_customer_portal_session') }}">
                         @csrf
                         <button type="submit" class="btn btn-primary btn-block p-2 shadow rounded-pill">Gérer mon abonnement</button>

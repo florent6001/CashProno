@@ -76,7 +76,7 @@
                                     {{ $winning_pronostic->sport }}
                                 </a>
                                 <br>
-                                <p class="montserrat">{{ $winning_pronostic->short_description }}</p>
+                                <p class="montserrat">{{  $winning_pronostic->description }}</p>
                             </div>
                             <div class="d-flex">
                                 <img src="/upload/{{ $winning_pronostic->logo_1 }}" style="height: 50px;">
@@ -127,7 +127,7 @@
                 <div class="bg-concours text-center py-5 font-weight-bold rounded p-0">
                     <a href="{{ route('giveaway_index') }}" class="text-white">
                         <h3 class="text-uppercase">Concours</h3>
-                        <p>Enovoie-nous ton pronostic et tente de gagner des cadeaux !</p>
+                        <p>Envoie-nous ton pronostic et tente de gagner des cadeaux !</p>
                     </a>
                 </div>
             </div>

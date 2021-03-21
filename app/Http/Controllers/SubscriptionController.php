@@ -110,15 +110,6 @@ class SubscriptionController extends Controller
      */
     public function create_customer_portal_session(Request $request)
     {
-        try {
-            $session = Session::create([
-                'customer' => Auth::user()->stripe_id,
-                'return_url' => url('/'),
-            ]);
-            return redirect($session->url);
-        } catch (ApiErrorException $e) {
-            $request->session()->flash('danger', 'Une erreur s\'est produite.');
-            return redirect()->route('homepage');
-        }
+        return $request->user()->redirectToBillingPortal();
     }
 }

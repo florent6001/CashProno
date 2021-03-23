@@ -22,6 +22,10 @@ class Vip
             {            
                 return $next($request);
             }
+            elseif (Auth::user()->admin == '1')
+            {
+                return $next($request);
+            }
             else 
             {
                 $request->session()->flash('danger', 'Vous devez être VIP afin d\'accéder à cette page.');

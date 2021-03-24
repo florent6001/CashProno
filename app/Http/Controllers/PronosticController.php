@@ -45,7 +45,7 @@ class PronosticController extends Controller
     {
         if($id->free_access !== 1)
         {
-            if (!Auth::user()->subscribed('football')) 
+            if (!Auth::user()->subscribed('football') && Auth::user()->admin == '0') 
             {
                 if (substr($id, -1) !== 0 || substr($id, -1) !== 5)
                 {

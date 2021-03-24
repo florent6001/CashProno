@@ -43,8 +43,10 @@
             @endforeach
 
             <div class="text-center">
-                @if($subscription['football'] == true || Auth::user()->admin == '1')
-                    <a href="{{ route('pronostic_find_by_date', Carbon\Carbon::parse($daily_pronostics->first()->date)->format('Y-m-d') )}}" class="btn btn-primary btn-block text-white text-uppercase py-2">Accéder a tous les pronostics du jour</a>
+                @auth
+                    @if($subscription['football'] == true || Auth::user()->admin == '1')
+                        <a href="{{ route('pronostic_find_by_date', Carbon\Carbon::parse($daily_pronostics->first()->date)->format('Y-m-d') )}}" class="btn btn-primary btn-block text-white text-uppercase py-2">Accéder a tous les pronostics du jour</a>
+                    @endif
                 @elseif($daily_pronostic->free_access == 1)
                     <a href="{{ route('pronostic_find_by_date', Carbon\Carbon::parse($daily_pronostics->first()->date)->format('Y-m-d') )}}" class="btn btn-primary btn-block text-white text-uppercase py-2">Accéder a tous les pronostics du jour</a>
                 @else

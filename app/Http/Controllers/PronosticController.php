@@ -45,11 +45,13 @@ class PronosticController extends Controller
     {
         if($id->free_access !== 1)
         {
-            if (!Auth::user()->subscribed('football') && Auth::user()->admin == '0') 
+            if(Auth::check())
             {
-                if (substr($id, -1) !== 0 || substr($id, -1) !== 5)
-                {
-                    return redirect()->route('subscription_index');
+                if(!Auth::user()->subscribed('football') && Auth::user()->admin == '0') {
+                    if (substr($id, -1) !== 0 || substr($id, -1) !== 5)
+                    {
+                        return redirect()->route('subscription_index');
+                    }                    
                 }
             }
         }
